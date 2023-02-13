@@ -1,0 +1,2 @@
+#!/binbash
+find . -mindepth -type d | wc -1 
