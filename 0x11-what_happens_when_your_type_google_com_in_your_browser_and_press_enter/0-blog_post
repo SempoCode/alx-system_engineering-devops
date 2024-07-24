@@ -1,0 +1,78 @@
+What Happens When You Type https://www.google.com in Your Browser and Press Enter?
+
+When you type "https://www.google.com" in your browser and press Enter, a complex series of events unfolds behind the scenes to deliver the webpage to your screen. Let's break down this process step-by-step:
+
+1. DNS Request
+The first step in this journey is the DNS (Domain Name System) request. The DNS translates the human-readable domain name (www.google.com) into an IP address that computers can understand (e.g., 142.250.72.206).
+
+Browser Cache: The browser first checks its cache to see if it has recently resolved the domain name.
+
+Operating System Cache: If not found, it queries the OS cache.
+
+Router Cache: Next, it checks the router's cache.
+
+ISP's DNS Server: If the IP address is still not found, the request goes to the ISP's DNS server.
+
+Recursive DNS Query: If the ISP's DNS server doesn't have the answer, it recursively queries other DNS servers until it finds the authoritative DNS server for google.com.
+
+Response: The authoritative server responds with the IP address of the Google server.
+
+2. TCP/IP
+With the IP address in hand, your browser now needs to establish a connection to the Google server using the TCP/IP protocol.
+
+Three-Way Handshake:
+
+SYN: Your browser sends a SYN (synchronize) packet to the Google server to initiate the connection.
+
+SYN-ACK: The server responds with a SYN-ACK (synchronize-acknowledge) packet.
+
+ACK: Your browser sends an ACK (acknowledge) packet back to the server, establishing a TCP connection.
+
+3. Firewall
+As data packets travel from your browser to the Google server and back, they may pass through several firewalls.
+
+Network Firewall: Firewalls at your local network, ISP, or corporate network filter traffic to ensure security.
+
+Server Firewall: The Google server's firewall protects it from unauthorized access and malicious traffic.
+
+4. HTTPS/SSL
+To ensure a secure connection, HTTPS (HyperText Transfer Protocol Secure) is used, which involves SSL/TLS (Secure Sockets Layer/Transport Layer Security).
+
+SSL Handshake:
+
+Client Hello: Your browser sends a "Client Hello" message to the server, which includes information about supported encryption methods.
+
+Server Hello: The server responds with a "Server Hello" message, choosing an encryption method and sending its SSL certificate.
+
+Certificate Verification: Your browser verifies the server's SSL certificate with a trusted Certificate Authority (CA).
+
+Session Keys: Both the browser and the server generate session keys for encryption and decryption of data.
+
+5. Load-Balancer
+Google uses load balancers to distribute incoming traffic across multiple servers to ensure availability and performance.
+
+Request Distribution: The load balancer forwards your request to one of the many Google servers based on various algorithms (e.g., round-robin, least connections).
+
+6. Web Server
+The load balancer forwards the request to a web server that handles HTTP(S) requests.
+
+Processing Request: The web server (e.g., Apache, Nginx) processes the request, serving static content (HTML, CSS, JS) or forwarding dynamic content requests to an application server.
+
+7. Application Server
+For dynamic content, the web server forwards the request to an application server that runs the necessary backend logic.
+
+Application Logic: The application server (e.g., Node.js, Django, Spring) processes the request, executes the application logic, accesses business services, and prepares the data that is to be sent back to the web server.
+
+8. Database
+Often, the application server needs to retrieve or store data, so it interacts with a database.
+
+Database Query: The application server queries the database (e.g., MySQL, MongoDB) to fetch or update data.
+
+Data Processing: The database processes the query and returns the results to the application server.
+
+Final Response
+
+The application server sends the processed data back to the web server, which then assembles a complete HTTP response and sends it back to your browser. Your browser renders the HTML content, applying CSS styles and executing JavaScript, resulting in the fully loaded webpage you see on your screen.
+
+Conclusion
+This intricate sequence of events happens in milliseconds, showcasing the complexity and efficiency of modern web technologies. Understanding this process not only helps in appreciating the underlying technology but also equips you with the knowledge to optimize and troubleshoot web applications effectively.
