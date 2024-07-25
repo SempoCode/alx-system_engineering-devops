@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Update package list and install Nginx without prompting for confirmation
+sudo apt-get update -y
+sudo apt-get install -y nginx
+
+# Create a custom HTML page to be served by Nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Ensure Nginx listens on port 80 (default configuration)
+sudo sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-available/default
+
+# Reload Nginx configuration without using systemctl
+sudo service nginx reload
+
+# Ensure Nginx is running
+sudo service nginx start
+
+echo "Nginx installation and configuration completed successfully."
