@@ -15,5 +15,3 @@ sudo service nginx reload
 
 # Ensure Nginx is running
 sudo service nginx start
-
-echo "Nginx installation and configuration completed successfully."
