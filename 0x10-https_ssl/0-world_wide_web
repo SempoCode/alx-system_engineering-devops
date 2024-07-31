@@ -9,7 +9,7 @@ get_subdomain_info() {
 
   result=$(dig "$subdomain.$domain" +short)
   if [ -n "$result" ]; then
-    echo "The subdomain $subdomain is an A record and points to $result"
+    echo "The subdomain $subdomain is a A record and points to $result"
   else
     echo "No DNS record found for $subdomain.$domain"
   fi
