@@ -3,13 +3,7 @@
 
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.backup
 
-echo "<html>
-<head><title>404 Not Found</title></head>
-<body>
-<h1>404 Not Found</h1>
-<p>Ceci n'est pas une page</p>
-</body>
-</html>" | sudo tee /var/www/html/custom_404.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
 
 server_block=$(cat <<EOF
 server {
