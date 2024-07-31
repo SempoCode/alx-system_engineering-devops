@@ -1,4 +1,5 @@
-s script configures Nginx to include a custom HTTP header and restarts the service.
+#!/usr/bin/env bash
+# This script configures Nginx to include a custom HTTP header and restarts the service.
 
 hostname=$(hostname)
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.backup
