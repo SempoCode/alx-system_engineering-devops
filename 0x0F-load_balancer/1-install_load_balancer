@@ -1,4 +1,5 @@
-s script installs and configures HAProxy to load balance traffic between web-01 and web-02
+#!/usr/bin/env bash#!/usr/bin/env bash
+# This script installs and configures HAProxy  to load balance traffic between web-01 and web-02
 
 # Update package list and install HAProxy
 sudo apt update
