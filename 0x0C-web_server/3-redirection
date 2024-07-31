@@ -15,8 +15,7 @@ EOF
 )
 echo "$server_block" | sudo tee /etc/nginx/sites-available/default
 
-sudo nginx -t
-if [ $? -eq 0 ]; then
+if sudo nginx -t; then
   sudo systemctl restart nginx
 else
   echo "Nginx configuration test failed."
