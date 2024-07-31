@@ -1,0 +1,7 @@
+s script configures Nginx to include a custom HTTP header and restarts the service.
+
+hostname=$(hostname)
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.backup
+sudo sed -i "/server {/a \ \tadd_header X-Served-By $hostname;" /etc/nginx/sites-available/default
+
+sudo systemctl restart nginx
