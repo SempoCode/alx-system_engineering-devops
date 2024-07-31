@@ -15,7 +15,7 @@ server {
     }
 
     location / {
-        # Other configurations (if any)
+        # Other configurations
     }
 }
 EOF
